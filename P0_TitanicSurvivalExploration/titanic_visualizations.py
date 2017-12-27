@@ -1,14 +1,3 @@
-###########################################
-# Suppress matplotlib user warnings
-# Necessary for newer version of matplotlib
-import warnings
-warnings.filterwarnings("ignore", category = UserWarning, module = "matplotlib")
-#
-# Display inline matplotlib plots with IPython
-from IPython import get_ipython
-get_ipython().run_line_magic('matplotlib', 'inline')
-###########################################
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -70,7 +59,7 @@ def survival_stats(data, outcomes, key, filters = []):
         return False
 
     # Merge data and outcomes into single dataframe
-    all_data = pd.concat([data, outcomes.to_frame()], axis = 1)
+    all_data = pd.concat([data, outcomes], axis = 1)
     
     # Apply filters to data
     for condition in filters:
