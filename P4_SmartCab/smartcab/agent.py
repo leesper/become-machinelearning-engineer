@@ -44,7 +44,7 @@ class LearningAgent(Agent):
             self.epsilon = 0.0
             self.alpha = 0.0
         else:
-            self.epsilon = math.exp(-0.003 * self.trials)
+            self.epsilon = math.exp(-0.01 * self.trials)
             # self.epsilon = 1.0 / float(self.trials ** 2)
 
         self.trials += 1
