@@ -31,7 +31,7 @@ _(approx. 2-3 pages)_
 ### 解决方案描述
 _(approx. 1 paragraph)_
 
-In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
+拟采用“卷及神经网络”作为本项目的解决方案，这种特殊类型的深度神经网络在计算机视觉领域有着广泛的应用。具体地，将采取迁移学习的策略，使用在ImageNet上预训练过的四种卷积网络VGGNet，ResNet，Inception v3和Xception导出特征向量，然后再在特征向量的基础上构建模型进行分类。这种方法有效的原因是卷积网络是一种分层架构，前几层能识别图像中的一些简单的图案，例如边缘等等，这些往往是每个图像识别问题所共有的特征，因此可以复用并节约时间，只需要训练和调整最后几层即可。
 
 ### 基准测试模型
 _(approximately 1-2 paragraphs)_
@@ -45,6 +45,9 @@ In this section, propose at least one evaluation metric that can be used to quan
 
 ### 项目设计
 _(approx. 1 page)_
+
+1. 导入数据并做数据检查和清洗
+2. 
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
