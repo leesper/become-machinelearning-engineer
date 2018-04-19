@@ -44,19 +44,13 @@ _(approx. 1-2 paragraphs)_
 In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
 
 ### 项目设计
-_(approx. 1 page)_
 
-1. 导入数据并做数据检查和清洗
-2. 
+本项目的设计方案分为6个步骤。第一步首先是导入数据并做预处理，方便后面使用ImageDataGenerator。第二步，对数据进行检查，分别基于OpenCV和预训练的Resnet50开发一个人脸检测器和一个猫狗检测器，对所有的训练数据进行检查，看看是否存在既不是猫也不是狗的图片，然后将其删除，以免影响训练效果。第三步则是对已检查清洗好的数据进行基本的可视化分析。第四步，采用迁移学习的策略，使用预训练的VGGNet，ResNet，Inception v3和Xception导出特征向量并保存。第五步，载入已保存的特征向量，然后构建ensemble模型。第六步，训练模型，观察模型的表现并根据实际情况做优化，直到达到项目要求。
 
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
+### 参考文献
 
------------
-
-**Before submitting your proposal, ask yourself. . .**
-
-- Does the proposal you have written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Solution Statement** and **Project Design**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your proposal?
-- Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
+1. [What Do We Understand About Convolutional Networks?](https://arxiv.org/abs/1803.08834)
+2. [VGGNet](https://arxiv.org/abs/1409.1556)
+3. [ResNet](https://arxiv.org/abs/1512.03385)
+4. [Inception v3](https://arxiv.org/abs/1512.00567)
+5. [Xception](https://arxiv.org/abs/1610.02357)
