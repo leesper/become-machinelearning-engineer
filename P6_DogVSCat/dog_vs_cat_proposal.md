@@ -3,7 +3,6 @@
 2018年4月17日
 
 ## 开题报告
-_(approx. 2-3 pages)_
 
 ### 领域背景
 
@@ -29,19 +28,18 @@ _(approx. 2-3 pages)_
 本项目来自[Kaggle](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition)，该项目提供了与之配套的数据集。数据集有800多M，分为训练数据和测试数据。训练数据包含25000张狗和猫的图片，每个图片文件都有相应标记；测试数据包含12500张没有标记的图片。该项目首先会使用训练数据对深度神经网络模型进行训练，最后在测试数据上评估模型的性能和泛化表现。
 
 ### 解决方案描述
-_(approx. 1 paragraph)_
 
 拟采用“卷及神经网络”作为本项目的解决方案，这种特殊类型的深度神经网络在计算机视觉领域有着广泛的应用。具体地，将采取迁移学习的策略，使用在ImageNet上预训练过的四种卷积网络VGGNet，ResNet，Inception v3和Xception导出特征向量，然后再在特征向量的基础上构建模型进行分类。这种方法有效的原因是卷积网络是一种分层架构，前几层能识别图像中的一些简单的图案，例如边缘等等，这些往往是每个图像识别问题所共有的特征，因此可以复用并节约时间，只需要训练和调整最后几层即可。
 
 ### 基准测试模型
-_(approximately 1-2 paragraphs)_
 
 In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
 
 ### 评价指标
-_(approx. 1-2 paragraphs)_
 
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+本项目要得到的最终结果是一个二分类问题，所以这里将用准确率结合二元交叉熵损失函数作为算法性能好坏的评估指标，将根据训练集和测试集的损失函数表现来评估算法性能。如果验证集损失还在下降，那么需要增加模型复杂度或者多训练几代；如果验证集损失上升，则出现过拟合，需要正则化或Dropout防止过拟合；如果验证集的损失出现震荡，则需要减小学习率；如果验证集的损失趋于稳定，则可以减少训练代数。
+
+![binary cross entropy](./binary_cross_entropy.jpg)
 
 ### 项目设计
 
